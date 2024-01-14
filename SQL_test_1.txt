@@ -1,0 +1,5 @@
+SELECT user_id
+FROM orders
+WHERE order_date <= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY user_id
+HAVING COUNT(*) > 10;
