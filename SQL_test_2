@@ -1,0 +1,6 @@
+SELECT user_id
+FROM orders
+WHERE order_status = 'cancelled'
+  AND order_date >= CURRENT_TIMESTAMP - INTERVAL '30 minutes'
+GROUP BY user_id
+HAVING COUNT(*) > 2;
